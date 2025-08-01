@@ -1,3 +1,4 @@
+from time import time
 from math import ceil
 from ahk import AHK
 import pymem
@@ -74,23 +75,36 @@ def get_mhfu_data(pid, base_address, game_id, show_small_monsters=True):
 
 
 if __name__ == "__main__":
-    ahk = AHK(version="v2")
-    win = ahk.find_window(
-        title=r"(?i)^PPSSPP v([\d.a-zA-Z]+) - (ULES01213|ULUS10391|ULJM05500)\s*:", title_match_mode="RegEx"
-    )
-    game = current_game(win.title)
-    base_address = get_memory_base_address(win.id)
+    class Test:
+        start = time()
+        ahk = AHK(version="v2")
+        target_window_title = r"(?i)^PPSSPP v([\d.a-zA-Z]+) - (ULES01213|ULUS10391|ULJM05500)\s*:"
+        not_responding_title = r" \([\w\s]+\)$"
+        win = None
+        not_responding = ahk.find_window(
+            title=target_window_title + not_responding_title, title_match_mode="RegEx"
+        )
+        if not not_responding:
+            win = ahk.find_window(
+                title=target_window_title, title_match_mode="RegEx"
+            )
+        if win:
+            game = current_game(win.title)
+            base_address = get_memory_base_address(win.id)
 
-    print("base_address:", hex(base_address))
-    print("base_address + user_memory_address:", hex(base_address + user_memory_address))
+            print("base_address:", hex(base_address))
+            print("base_address + user_memory_address:", hex(base_address + user_memory_address))
 
-    data = get_mhfu_data(win.pid, base_address, game["id"])
-    monsters = data["monsters"]
-    for monster in monsters:
-        if monster[2] > 5:
-            large_monster = MonstersMHFU.large_monsters.get(monster[0])
-            small_monster_name = MonstersMHFU.small_monsters.get(monster[0])
-            if large_monster:
-                print([large_monster["name"], *monster[1::], monster[0]])
-            if small_monster_name:
-                print([small_monster_name, *monster[1::], monster[0]])
+            data = get_mhfu_data(win.pid, base_address, game["id"])
+            monsters = data["monsters"]
+            for monster in monsters:
+                if monster[2] > 5:
+                    large_monster = MonstersMHFU.large_monsters.get(monster[0])
+                    small_monster_name = MonstersMHFU.small_monsters.get(monster[0])
+                    if large_monster:
+                        print([large_monster["name"], *monster[1::], monster[0]])
+                    if small_monster_name:
+                        print([small_monster_name, *monster[1::], monster[0]])
+        end = time()
+        print(end - start)
+    Test()

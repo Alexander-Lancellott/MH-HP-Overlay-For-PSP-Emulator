@@ -2,488 +2,248 @@ class MonstersMHFU:
     large_monsters = {
         1: {
             "name": "Rathian",
-            "crowns": {"g": 0, "s": 0, "m": 93}
+            "crowns": {"g": 129, "s": 118, "m": 93}
         },
         2: {
             "name": "Fatalis",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         6: {
             "name": "Yian Kut-Ku",
-            "crowns": {"g": 0, "s": 114, "m": 90}
+            "crowns": {"g": 122, "s": 114, "m": 90}
         },
         7: {
             "name": "Lao-Shan Lung",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         8: {
             "name": "Cephadrome",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 122, "s": 118, "m": 93}
         },
         11: {
             "name": "Rathalos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 127, "s": 114, "m": 90}
         },
         14: {
             "name": "Diablos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 139, "s": 123, "m": 97}
         },
         15: {
             "name": "Khezu",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 135, "s": 118, "m": 93}
         },
         17: {
             "name": "Gravios",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 135, "s": 123, "m": 97}
         },
         20: {
             "name": "Gypceros",
-            "crowns": {"g": 0, "s": 0, "m": 93}
+            "crowns": {"g": 125, "s": 118, "m": 93}
         },
         21: {
             "name": "Plesioth",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 134, "s": 123, "m": 97}
         },
         22: {
             "name": "Basarios",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 129, "s": 118, "m": 93}
         },
         26: {
             "name": "Monoblos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 127, "s": 116, "m": 94}
         },
         27: {
             "name": "Velocidrome",
-            "crowns": {"g": 0, "s": 0, "m": 90}
+            "crowns": {"g": 123, "s": 119, "m": 90}
         },
         28: {
             "name": "Gendrome",
-            "crowns": {"g": 0, "s": 0, "m": 90}
+            "crowns": {"g": 123, "s": 119, "m": 90}
         },
         31: {
             "name": "Iodrome",
-            "crowns": {"g": 0, "s": 0, "m": 90}
+            "crowns": {"g": 136, "s": 124, "m": 90}
         },
         33: {
             "name": "Kirin",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 177, "s": 130, "m": 97}
         },
         36: {
-            "name": "Fatalis",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "name": "Crimson Fatalis",
+            "crowns": {"g": None, "s": None, "m": None}
         },
         37: {
             "name": "Pink Rathian",
-            "crowns": {"g": 0, "s": 0, "m": 93}
+            "crowns": {"g": 129, "s": 118, "m": 93}
         },
         38: {
             "name": "Blue Yian Kut-Ku",
-            "crowns": {"g": 0, "s": 114, "m": 90}
+            "crowns": {"g": 122, "s": 114, "m": 90}
         },
         39: {
             "name": "Purple Gypceros",
-            "crowns": {"g": 0, "s": 0, "m": 93}
+            "crowns": {"g": 125, "s": 118, "m": 93}
         },
         40: {
-            "name": "Yian Garuga",
-            "crowns": {"g": 0, "s": 113, "m": 91}
+            "name": "Scarred Yian Garuga",
+            "crowns": {"g": 121, "s": 113, "m": 91}
         },
         41: {
             "name": "Silver Rathalos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 127, "s": 114, "m": 90}
         },
         42: {
             "name": "Gold Rathian",
-            "crowns": {"g": 0, "s": 0, "m": 93}
+            "crowns": {"g": 129, "s": 118, "m": 93}
         },
         43: {
             "name": "Black Diablos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 139, "s": 123, "m": 97}
         },
         44: {
             "name": "White Monoblos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 127, "s": 116, "m": 94}
         },
         45: {
             "name": "Red Khezu",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 135, "s": 118, "m": 93}
         },
         46: {
             "name": "Green Plesioth",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 134, "s": 123, "m": 97}
         },
         47: {
             "name": "Black Gravios",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 135, "s": 123, "m": 97}
         },
         48: {
             "name": "Daimyo Hermitaur",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 123, "s": 110, "m": 88}
         },
         49: {
             "name": "Azure Rathalos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 127, "s": 114, "m": 90}
         },
         50: {
             "name": "Ash Lao-Shan Lung",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         51: {
             "name": "Blangonga",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 138, "s": 125, "m": 99}
         },
         52: {
             "name": "Congalala",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 125, "s": 115, "m": 97}
         },
         53: {
             "name": "Rajang",
-            "crowns": {"g": 0, "s": 0, "m": 105}
+            "crowns": {"g": 140, "s": 125, "m": 105}
         },
         54: {
             "name": "Kushala Daora",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 120, "s": 110, "m": 91}
         },
         55: {
             "name": "Shen Gaoren",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         58: {
             "name": "Yama Tsukami",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         59: {
             "name": "Chameleos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 141, "s": 120, "m": 96}
         },
         60: {
-            "name": "Kushala Daora",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "name": "Rusted Kushala Daora",
+            "crowns": {"g": 120, "s": 110, "m": 91}
         },
         64: {
             "name": "Lunastra",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 121, "s": 115, "m": 91}
         },
         65: {
             "name": "Teostra",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 125, "s": 110, "m": 88}
         },
         67: {
             "name": "Shogun Ceanataur",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 120, "s": 114, "m": 94}
         },
         68: {
             "name": "Bulldrome",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 130, "s": 113, "m": 98}
         },
         71: {
-            "name": "Fatalis",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "name": "White Fatalis",
+            "crowns": {"g": None, "s": None, "m": None}
         },
         72: {
             "name": "Yama Tsukami",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         75: {
             "name": "Tigrex",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 123, "s": 119, "m": 90}
         },
         76: {
             "name": "Akantor",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         77: {
             "name": "Giadrome",
-            "crowns": {"g": 0, "s": 0, "m": 90}
+            "crowns": {"g": 123, "s": 119, "m": 90}
         },
         78: {
             "name": "Yian Garuga",
-            "crowns": {"g": 0, "s": 113, "m": 91}
+            "crowns": {"g": 121, "s": 113, "m": 91}
         },
         79: {
             "name": "King Shakalaka",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         80: {
             "name": "Vespoid Queen",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         81: {
             "name": "Nargacuga",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 123, "s": 119, "m": 90}
         },
         82: {
             "name": "Hypnocatrice",
-            "crowns": {"g": 0, "s": 115, "m": 91}
+            "crowns": {"g": 121, "s": 115, "m": 91}
         },
         83: {
             "name": "Lavasioth",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 116, "s": 110, "m": 85}
         },
         84: {
             "name": "Copper Blangonga",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 138, "s": 125, "m": 99}
         },
         85: {
             "name": "Emerald Congalala",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 125, "s": 115, "m": 97}
         },
         86: {
             "name": "Plum D.Hermitaur",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 123, "s": 110, "m": 88}
         },
         87: {
             "name": "Terra S.Ceanataur",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": 120, "s": 114, "m": 94}
         },
         88: {
             "name": "Ukanlos",
-            "crowns": {"g": 0, "s": 0, "m": 0}
+            "crowns": {"g": None, "s": None, "m": None}
         },
         89: {
-            "name": "Rajang",
-            "crowns": {"g": 0, "s": 0, "m": 105}
-        },
-        # 91: {
-        #     "name": "Rathian",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 92: {
-        #     "name": "Fatalis",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 96: {
-        #     "name": "Yian Kut-Ku",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 97: {
-        #     "name": "Lao-Shan Lung",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 98: {
-        #     "name": "Cephadrome",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 101: {
-        #     "name": "Rathalos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 104: {
-        #     "name": "Diablos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 105: {
-        #     "name": "Khezu",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 107: {
-        #     "name": "Gravios",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 109: {
-        #     "name": "Gypceros",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 110: {
-        #     "name": "Plesioth",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 111: {
-        #     "name": "Basarios",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 115: {
-        #     "name": "Monoblos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 116: {
-        #     "name": "Velocidrome",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 117: {
-        #     "name": "Gendrome",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 119: {
-        #     "name": "Iodrome",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 120: {
-        #     "name": "Kirin",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 123: {
-        #     "name": "Fatalis",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 124: {
-        #     "name": "Pink Rathian",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 125: {
-        #     "name": "Blue Yian Kut-Ku",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 126: {
-        #     "name": "Purple Gypceros",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 127: {
-        #     "name": "Yian Garuga",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 128: {
-        #     "name": "Silver Rathalos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 129: {
-        #     "name": "Gold Rathian",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 130: {
-        #     "name": "Black Diablos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 131: {
-        #     "name": "White Monoblos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 132: {
-        #     "name": "Red Khezu",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 133: {
-        #     "name": "Green Plesioth",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 134: {
-        #     "name": "Black Gravios",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 135: {
-        #     "name": "Daimyo Hermitaur",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 136: {
-        #     "name": "Azure Rathalos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 137: {
-        #     "name": "Ash Lao-Shan Lung",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 138: {
-        #     "name": "Blangonga",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 139: {
-        #     "name": "Congalala",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 140: {
-        #     "name": "Rajang",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 141: {
-        #     "name": "Kushala Daora",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 142: {
-        #     "name": "Shen Gaoren",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 145: {
-        #     "name": "Yama Tsukami",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 146: {
-        #     "name": "Chameleos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 147: {
-        #     "name": "Kushala Daora",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 151: {
-        #     "name": "Lunastra",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 152: {
-        #     "name": "Teostra",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 154: {
-        #     "name": "Shogun Ceanataur",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 155: {
-        #     "name": "Bulldrome",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 158: {
-        #     "name": "Fatalis",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 161: {
-        #     "name": "Tigrex",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 162: {
-        #     "name": "Akantor",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 163: {
-        #     "name": "Giadrome",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 164: {
-        #     "name": "Yian Garuga",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 165: {
-        #     "name": "King Shakalaka",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 166: {
-        #     "name": "Vespoid Queen",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 167: {
-        #     "name": "Nargacuga",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 168: {
-        #     "name": "Hypnocatrice",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 169: {
-        #     "name": "Lavasioth",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 170: {
-        #     "name": "Copper Blangonga",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 171: {
-        #     "name": "Emerald Congalala",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 172: {
-        #     "name": "Plum D.Hermitaur",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 173: {
-        #     "name": "Terra S.Ceanataur",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 174: {
-        #     "name": "Ukanlos",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
-        # 175: {
-        #     "name": "Rajang",
-        #     "crowns": {"g": 0, "s": 0, "m": 0}
-        # },
+            "name": "Furious Rajang",
+            "crowns": {"g": 140, "s": 125, "m": 105}
+        }
     }
 
     small_monsters = {
@@ -515,30 +275,5 @@ class MonstersMHFU:
         70: "Popo",
         73: "Ceanataur",
         74: "dummy",
-        90: "NO DATA",
-        # 93: "Kelbi",
-        # 94: "Mosswine",
-        # 95: "Bullfango",
-        # 99: "Felyne",
-        # 100: "dummy",
-        # 102: "Aptonoth",
-        # 103: "Genprey",
-        # 106: "Velociprey",
-        # 108: "Vespoid",
-        # 112: "Melynx",
-        # 113: "Hornetaur",
-        # 114: "Apceros",
-        # 118: "Ioprey",
-        # 121: "Cephalos",
-        # 122: "Giaprey",
-        # 143: "Great Thunderbug",
-        # 144: "Shakalaka",
-        # 148: "Blango",
-        # 149: "Conga",
-        # 150: "Remobra",
-        # 153: "Hermitaur",
-        # 156: "Anteka",
-        # 157: "Popo",
-        # 159: "Ceanataur",
-        # 160: "dummy"
+        90: "NO DATA"
     }
