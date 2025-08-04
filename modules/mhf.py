@@ -6,23 +6,23 @@ import pymem
 
 from modules.utils import read_int, max_monsters, current_game
 from modules.ppsspp import user_memory_address, get_memory_base_address
-from modules.monsters_mhfu import MonstersMHFU
+from modules.monsters_mhf import MonstersMHF
 
 initial_pointer = {
-    "ULES01213": 0x1412140,
-    "ULUS10391": 0x1412240,
-    "ULJM05500": 0x140D3C0
+    "ULES00318": 0x1254D70,
+    "ULUS10084": 0x1253F70,
+    "ULJM05066": 0x1253570
 }
 
 
-def get_mhfu_data(pid, base_address, game_id, show_small_monsters=True):
+def get_mhf_data(pid, base_address, game_id, show_small_monsters=True):
     large_monster_results = []
     small_monster_results = []
 
     address = base_address + user_memory_address + initial_pointer[game_id]
 
-    large_monsters = MonstersMHFU.large_monsters
-    small_monsters = MonstersMHFU.small_monsters if show_small_monsters else {}
+    large_monsters = MonstersMHF.large_monsters
+    small_monsters = MonstersMHF.small_monsters if show_small_monsters else {}
 
     process_handle = pymem.process.open(pid)
 
@@ -39,30 +39,26 @@ def get_mhfu_data(pid, base_address, game_id, show_small_monsters=True):
                         status_name: values,
                     })
 
-            name = read_int(process_handle, p1 + 0x1E8, 1)
-            hp = read_int(process_handle, p1 + 0x2E4)
-            max_hp = read_int(process_handle, p1 + 0x41E)
+            name = read_int(process_handle, p1 + 0x210, 1)
+            hp = read_int(process_handle, p1 + 0x312)
+            max_hp = read_int(process_handle, p1 + 0x43C)
             if large_monsters.get(name):
-                size = read_int(process_handle, p1 + 0x274)
+                size = read_int(process_handle, p1 + 0x2A4)
                 add_abnormal_status("Poison", [
-                    read_int(process_handle, p1 + 0x388, 2),
-                    read_int(process_handle, p1 + 0x450, 2)
+                    read_int(process_handle, p1 + 0x3A8, 2),
+                    read_int(process_handle, p1 + 0x46C, 2)
                 ])
                 add_abnormal_status("Sleep", [
-                    read_int(process_handle, p1 + 0x446, 2),
-                    read_int(process_handle, p1 + 0x444, 2)
+                    read_int(process_handle, p1 + 0x462, 2),
+                    read_int(process_handle, p1 + 0x460, 2)
                 ])
                 add_abnormal_status("Paralysis", [
-                    read_int(process_handle, p1 + 0x458, 2),
-                    read_int(process_handle, p1 + 0x456, 2)
-                ])
-                add_abnormal_status("Dizzy", [
-                    read_int(process_handle, p1 + 0x440, 2),
-                    read_int(process_handle, p1 + 0x566, 2)
+                    read_int(process_handle, p1 + 0x474, 2),
+                    read_int(process_handle, p1 + 0x472, 2)
                 ])
                 abnormal_status.update({
                     "Rage": int(ceil(
-                        read_int(process_handle, p1 + 0x56C, 2) / 60
+                        read_int(process_handle, p1 + 0x580, 2) / 60
                     ))
                 })
                 large_monster_results.append([name, hp, max_hp, size, abnormal_status, hex(p1), hex(address)])
@@ -97,12 +93,12 @@ if __name__ == "__main__":
             print("base_address:", hex(base_address))
             print("base_address + user_memory_address:", hex(base_address + user_memory_address))
 
-            data = get_mhfu_data(win.pid, base_address, game["id"])
+            data = get_mhf_data(win.pid, base_address, game["id"])
             monsters = data["monsters"]
             for monster in monsters:
                 if monster[2] > 5:
-                    large_monster = MonstersMHFU.large_monsters.get(monster[0])
-                    small_monster_name = MonstersMHFU.small_monsters.get(monster[0])
+                    large_monster = MonstersMHF.large_monsters.get(monster[0])
+                    small_monster_name = MonstersMHF.small_monsters.get(monster[0])
                     if large_monster:
                         print([large_monster["name"], *monster[1::], monster[0]])
                     if small_monster_name:

@@ -7,8 +7,13 @@ import win32gui
 from ahk import AHK, Position
 from PySide6.QtCore import QTimer, Qt, QThread, Signal, qInstallMessageHandler
 from PySide6.QtGui import QColorConstants
+from modules.mhf import get_mhf_data
+from modules.mhf2 import get_mhf2_data
 from modules.mhfu import get_mhfu_data
+from modules.mhp3rd import get_mhp3rd_data
+from modules.monsters_mhf import MonstersMHF
 from modules.monsters_mhfu import MonstersMHFU
+from modules.monsters_mhp3rd import MonstersMHP3RD
 from modules.ppsspp import get_memory_base_address
 from modules.config import ConfigOverlay, ConfigLayout, ConfigColors
 from PySide6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QSizePolicy
@@ -48,11 +53,17 @@ class DataFetcher(QThread):
         while True:
             data = {"monsters": [], "total": [0, 0]}
             game_name, game_id = self.game["name"], self.game["id"]
+            is_mhf = game_name in ("MHF", "MHP")
+            is_mhf2 = game_name in ("MHF2", "MHP2")
             is_mhfu = game_name in ("MHFU", "MHP2G")
+            is_mhp3rd = game_name in ("MHP3RD", "MHP3RD HD")
             try:
                 data = (
-                    get_mhfu_data(self.pid, self.base_address, game_id, self.show_small_monsters)
-                    if is_mhfu else {"monsters": [], "total": [0, 0]}
+                    get_mhf_data(self.pid, self.base_address, game_id, self.show_small_monsters)
+                    if is_mhf else get_mhf2_data(self.pid, self.base_address, game_id, self.show_small_monsters)
+                    if is_mhf2 else get_mhfu_data(self.pid, self.base_address, game_id, self.show_small_monsters)
+                    if is_mhfu else get_mhp3rd_data(self.pid, self.base_address, game_id, self.show_small_monsters)
+                    if is_mhp3rd else {"monsters": [], "total": [0, 0]}
                 )
             except (Exception,):
                 pass
@@ -253,13 +264,13 @@ class Overlay(QWidget):
         timer1.start(10)
 
         ahk.add_hotkey(
-            f"{self.reset_hotkey} Up", reset_app,
+            f"~{self.reset_hotkey} Up", reset_app,
         )
         ahk.add_hotkey(
-            f"{self.monster_selected_hotkey} Up", self.toogle_monster_selected,
+            f"~{self.monster_selected_hotkey} Up", self.toogle_monster_selected,
         )
         ahk.add_hotkey(
-            f"{self.hotkey} Up",
+            f"~{self.hotkey} Up",
             callback=lambda: self.toggle_borderless_screen(
                 ahk, target_window_title, not_responding_title
             ),
@@ -385,7 +396,10 @@ class Overlay(QWidget):
                     status_label2.setParent(None)
             if len(data['monsters']) > index:
                 game_name = self.game["name"]
+                is_mhf = game_name in ("MHF", "MHP")
+                is_mhf2 = game_name in ("MHF2", "MHP2")
                 is_mhfu = game_name in ("MHFU", "MHP2G")
+                is_mhp3rd = game_name in ("MHP3RD", "MHP3RD HD")
                 label_layout = label_layouts[index]
                 monster = data['monsters'][index]
                 if data['total'][0] == 1:
@@ -395,12 +409,16 @@ class Overlay(QWidget):
                 else:
                     self.selected_options = 3
                 large_monster = (
-                    MonstersMHFU.large_monsters.get(monster[0])
-                    if is_mhfu else {"name": "", "crowns": {}}
+                    MonstersMHF.large_monsters.get(monster[0])
+                    if is_mhf else MonstersMHFU.large_monsters.get(monster[0])
+                    if is_mhf2 or is_mhfu else MonstersMHP3RD.large_monsters.get(monster[0])
+                    if is_mhp3rd else {"name": "", "crowns": {}}
                 )
                 small_monster_name = (
-                    MonstersMHFU.small_monsters.get(monster[0])
-                    if is_mhfu else {}
+                    MonstersMHF.small_monsters.get(monster[0])
+                    if is_mhf else MonstersMHFU.small_monsters.get(monster[0])
+                    if is_mhf2 or is_mhfu else MonstersMHP3RD.small_monsters.get(monster[0])
+                    if is_mhp3rd else {}
                 )
                 hp = monster[1]
                 initial_hp = monster[2]

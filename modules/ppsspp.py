@@ -14,10 +14,7 @@ def wm_get_base_pointer(l_param, win_id):
 
 def get_memory_base_address(win_id):
     reply0 = wm_get_base_pointer(0, win_id)
-    # reply2 = wm_get_base_pointer(2)
-    # x64
     reply1 = wm_get_base_pointer(1, win_id)
-    # reply3 = wm_get_base_pointer(3)
 
     if reply0 != "FAIL" and reply1 != "FAIL":
         return (reply1 << 32) + reply0

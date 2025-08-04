@@ -222,7 +222,7 @@ class ConfigOverlay:
         error = (
             "Invalid hotkey. "
             "Check this: https://www.autohotkey.com/docs/v1/Hotkeys.htm#Symbols "
-            "The symbols *, ~, $ and UP are not allowed."
+            "The symbols *, ~ and $ are not allowed."
         )
         print_error("hotkey", error)
     reset_hotkey = set_option("reset_hotkey", Config.Overlay, "get", "^r")
@@ -230,7 +230,7 @@ class ConfigOverlay:
         error = (
             "Invalid hotkey. "
             "Check this: https://www.autohotkey.com/docs/v1/Hotkeys.htm#Symbols "
-            "The symbols *, ~, $ and UP are not allowed."
+            "The symbols *, ~ and $ are not allowed."
         )
         print_error("reset_hotkey", error)
     monster_selected_hotkey = set_option("monster_selected_hotkey", Config.Overlay, "get", "Enter")
@@ -238,7 +238,7 @@ class ConfigOverlay:
         error = (
             "Invalid hotkey. "
             "Check this: https://www.autohotkey.com/docs/v1/Hotkeys.htm#Symbols "
-            "The symbols *, ~, $ and UP are not allowed."
+            "The symbols *, ~ and $ are not allowed."
         )
         print_error("monster_selected_hotkey", error)
     debugger = set_option("debugger", Config.Overlay, "getboolean", "false")

@@ -88,8 +88,8 @@ GAME_MAP = {
     "ULJM05066": {"name": "MHP"},  # JP
     "ULJM05156": {"name": "MHP2"},  # JP
     "ULJM05500": {"name": "MHP2G"},  # JP
-    "ULJM05800": {"name": "MHP3"},  # JP
-    "NPJB40001": {"name": "MHP3 HD"}  # JP
+    "ULJM05800": {"name": "MHP3RD"},  # JP
+    "NPJB40001": {"name": "MHP3RD HD"}  # JP
 }
 
 
@@ -102,14 +102,20 @@ def current_game(win_title: str):
 
 
 def get_crown(size, crowns, enable):
-    if not enable or crowns["g"] is None:
+    if not enable:
         return ""
-    if crowns["g"] <= size:
+
+    g = crowns.get("g")
+    s = crowns.get("s")
+    m = crowns.get("m")
+
+    if g is not None and size >= g:
         return " Gold"
-    if crowns["s"] <= size:
+    if s is not None and size >= s:
         return " Silver"
-    if crowns["m"] >= size:
+    if m is not None and size <= m:
         return " Mini"
+
     return ""
 
 

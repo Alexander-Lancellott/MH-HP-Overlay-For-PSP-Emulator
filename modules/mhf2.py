@@ -9,13 +9,13 @@ from modules.ppsspp import user_memory_address, get_memory_base_address
 from modules.monsters_mhfu import MonstersMHFU
 
 initial_pointer = {
-    "ULES01213": 0x1412140,
-    "ULUS10391": 0x1412240,
-    "ULJM05500": 0x140D3C0
+    "ULES00851": 0x127AD70,
+    "ULUS10266": 0x12799F0,
+    "ULJM05156": 0x1278E70,
 }
 
 
-def get_mhfu_data(pid, base_address, game_id, show_small_monsters=True):
+def get_mhf2_data(pid, base_address, game_id, show_small_monsters=True):
     large_monster_results = []
     small_monster_results = []
 
@@ -40,7 +40,7 @@ def get_mhfu_data(pid, base_address, game_id, show_small_monsters=True):
                     })
 
             name = read_int(process_handle, p1 + 0x1E8, 1)
-            hp = read_int(process_handle, p1 + 0x2E4)
+            hp = read_int(process_handle, p1 + 0x2E2)
             max_hp = read_int(process_handle, p1 + 0x41E)
             if large_monsters.get(name):
                 size = read_int(process_handle, p1 + 0x274)
@@ -58,11 +58,11 @@ def get_mhfu_data(pid, base_address, game_id, show_small_monsters=True):
                 ])
                 add_abnormal_status("Dizzy", [
                     read_int(process_handle, p1 + 0x440, 2),
-                    read_int(process_handle, p1 + 0x566, 2)
+                    read_int(process_handle, p1 + 0x55E, 2)
                 ])
                 abnormal_status.update({
                     "Rage": int(ceil(
-                        read_int(process_handle, p1 + 0x56C, 2) / 60
+                        read_int(process_handle, p1 + 0x564, 2) / 60
                     ))
                 })
                 large_monster_results.append([name, hp, max_hp, size, abnormal_status, hex(p1), hex(address)])
@@ -97,7 +97,7 @@ if __name__ == "__main__":
             print("base_address:", hex(base_address))
             print("base_address + user_memory_address:", hex(base_address + user_memory_address))
 
-            data = get_mhfu_data(win.pid, base_address, game["id"])
+            data = get_mhf2_data(win.pid, base_address, game["id"])
             monsters = data["monsters"]
             for monster in monsters:
                 if monster[2] > 5:
