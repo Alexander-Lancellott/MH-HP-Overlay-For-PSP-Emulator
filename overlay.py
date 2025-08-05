@@ -115,7 +115,7 @@ class Overlay(QWidget):
         self.initialize_ui()
 
     def initialize_ui(self):
-        target_window_title = r"(?i)^PPSSPP v([\d.a-zA-Z]+) - ([A-Z0-9]+)\s*:"
+        target_window_title = r"(?i)^PPSSPP(?: [\w]+)* v([\d.a-zA-Z]+) - ([A-Z0-9]+)\s*:"
         not_responding_title = r" \([\w\s]+\)$"
         ahk = AHK(version="v2", extensions=[wmutil_extension])
 

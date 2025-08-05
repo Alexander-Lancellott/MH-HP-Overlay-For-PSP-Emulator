@@ -79,7 +79,7 @@ if __name__ == "__main__":
         start = time()
         ahk = AHK(version="v2")
         keys_regex = "|".join(map(re.escape, initial_pointer.keys()))
-        target_window_title = fr"(?i)^PPSSPP v([\d.a-zA-Z]+) - ({keys_regex})\s*:"
+        target_window_title = fr"(?i)^PPSSPP(?: [\w]+)* v([\d.a-zA-Z]+) - ({keys_regex})\s*:"
         not_responding_title = r" \([\w\s]+\)$"
         win = None
         not_responding = ahk.find_window(

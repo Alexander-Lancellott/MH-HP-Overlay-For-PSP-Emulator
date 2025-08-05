@@ -89,8 +89,7 @@ class MonstersMHF:
             "crowns": {"g": 131, "s": 113, "m": None}
         },
         41: {
-            "name": "Silver "
-                    "thalos",
+            "name": "Silver Rathalos",
             "crowns": {"g": 127, "s": 114, "m": None}
         },
         42: {
