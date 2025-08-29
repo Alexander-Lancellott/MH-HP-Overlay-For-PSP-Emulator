@@ -9,7 +9,7 @@
 
 ## Description
 
-A simple open-source HP overlay that I've developed for MHF/2/U, MHP/2/2G and MHP3RD/HD in Python. This project is a port of another one I previously created called [MH-HP-Overlay-For-3DS-Emulator](https://github.com/Alexander-Lancellott/MH-HP-Overlay-For-3DS-Emulator), but this time it's designed to work with PSP emulator, [PPSSPP](https://www.ppsspp.org/download/), on their PC (Windows) versions.
+A simple open-source HP overlay that I've developed for MHF/2/U, MHP/2/2G and MHP3RD/HD in Python. This project is a port of another one I previously created called [MH-HP-Overlay-For-3DS-Emulator](https://github.com/Alexander-Lancellott/MH-HP-Overlay-For-3DS-Emulator), but this time it's designed to work with PSP emulator, [PPSSPP](https://www.ppsspp.org/download/), on its PC (Windows) versions.
 
 You can support me by donating! I’d really appreciate it. But either way, thank you for using this mod!
 
