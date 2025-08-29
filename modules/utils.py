@@ -19,7 +19,7 @@ yellow = Fore.YELLOW
 red = Fore.RED
 reset = Fore.RESET
 
-max_monsters = 7
+max_monsters = 10
 max_status = 8
 
 
